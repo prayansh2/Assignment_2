@@ -7,9 +7,9 @@ connectDB();
 
 app.use(express.json());
 
-// Your routes here
+
 app.use("/api", require("./routes/apiRoutes"));
 
 
-// ❌ Do NOT call `app.listen(PORT)` here
+
 module.exports = app;

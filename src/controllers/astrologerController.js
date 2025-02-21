@@ -1,6 +1,6 @@
 const Astrologer = require("../models/astrologerModel");
 
-// 🔹 Create a New Astrologer
+
 exports.createAstrologer = async (req, res) => {
   try {
     const astrologer = new Astrologer({
@@ -16,7 +16,6 @@ exports.createAstrologer = async (req, res) => {
   }
 };
 
-// 🔹 Set Astrologer Priority
 exports.setAstrologerPriority = async (req, res) => {
   try {
     const { astrologerId, isTopAstrologer } = req.body;

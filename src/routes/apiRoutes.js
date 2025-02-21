@@ -5,12 +5,12 @@ const authMiddleware = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
-// 🔹 User Routes
+
 router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.post("/connect", authMiddleware, connectUser);
 
-// 🔹 Astrologer Routes
+
 router.post("/create-astrologer", createAstrologer);
 router.post("/set-priority", setAstrologerPriority);
 

@@ -2,7 +2,7 @@ const User = require("../models/userModel");
 const jsonwebtoken = require("jsonwebtoken");
 const { distributeUserToAstrologer } = require("../services/flowService");
 
-// 🔹 Register a New User
+
 exports.registerUser = async (req, res) => {
   console.log("request...")
   try {
@@ -14,7 +14,7 @@ exports.registerUser = async (req, res) => {
   }
 };
 
-// 🔹 Login User & Get JWT Token
+
 exports.loginUser = async (req, res) => {
   try {
     const { name, password } = req.body;
@@ -31,7 +31,7 @@ exports.loginUser = async (req, res) => {
   }
 };
 
-// 🔹 Connect User to an Astrologer
+
 exports.connectUser = async (req, res) => {
   try {
     const { userId } = req.body;
