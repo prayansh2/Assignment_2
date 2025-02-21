@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
-  "dev": "nodemon src/index.js",
+    "dev": "nodemon src/index.js",
     "test": "jest --detectOpenHandles --forceExit"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "a2": "file:",
     "crypto": "^1.0.1",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",

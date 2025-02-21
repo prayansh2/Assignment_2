@@ -12,7 +12,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: password
-      MONGO_INITDB_DATABASE: backenddb
+      MONGO_INITDB_DATABASE: Astrologer
 
 
   backend:
@@ -25,7 +25,7 @@ services:
     ports:
       - "5000:5000"
     environment:
-      MONGO_URI: "mongodb://root:password@mongo-db:27017/backenddb?authSource=admin"
+      MONGO_URI: "mongodb://root:password@mongo-db:27017/Astrologer?authSource=admin"
 
     volumes:
       - .:/app  # 🔥 Yeh ensure karega ki code changes reflect ho
