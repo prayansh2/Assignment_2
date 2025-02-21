@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongo-db
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: backenddb
+
+
+  backend:
+    build: .
+    container_name: backend-api-a2
+    image: backend-api-a2
+    restart: always
+    depends_on:
+      - mongodb
+    ports:
+      - "5000:5000"
+    environment:
+      MONGO_URI: "mongodb://root:password@mongo-db:27017/backenddb?authSource=admin"
+
+    volumes:
+      - .:/app  # 🔥 Yeh ensure karega ki code changes reflect ho
+      - /app/node_modules  # ⚠️ node_modules ko exclude karna zaroori hai
+    command: ["npm", "start", ]
+
+
+  
+
+
+volumes:
+  mongo_data:
